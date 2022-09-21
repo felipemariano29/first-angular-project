@@ -23,7 +23,7 @@ export class RecipeService {
     ),
     new Recipe(
       'Estrogonofe',
-      'Cubos de carne bovina servidos num molho de creme de leite.',
+      'Cubos de carne servidos num molho de creme de leite.',
       'https://simplelivingrecipes.com/wp-content/uploads/2020/02/Brazilian-Stroganoff--500x500.jpg',
       [
         new Ingredient('Meat', 1),
@@ -39,6 +39,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(i: number) {
+    return this.recipes[i];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
