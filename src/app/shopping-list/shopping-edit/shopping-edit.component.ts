@@ -8,7 +8,7 @@ import { ShoppingListService } from '../shopping-list.service';
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
-  styleUrls: ['./shopping-edit.component.css']
+  styleUrls: ['./shopping-edit.component.css'],
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f', { static: false }) slForm: NgForm;
@@ -28,9 +28,9 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
           this.editedItem = this.slService.getIngredient(index);
           this.slForm.setValue({
             name: this.editedItem.name,
-            amount: this.editedItem.amount
-          })
-        }
+            amount: this.editedItem.amount,
+          });
+        },
       );
   }
 
@@ -38,7 +38,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     const
       value = form.value,
       newIngredient = new Ingredient(value.name, value.amount);
-    if(this.editMode) {
+    if (this.editMode) {
       this.slService.updateIngredient(this.editedItemIndex, newIngredient);
     } else {
       this.slService.addIngredient(newIngredient);

@@ -7,7 +7,7 @@ export class ShoppingListService {
   startedEditing = new Subject<Number>();
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 8)
+    new Ingredient('Tomatoes', 8),
   ];
 
   getIngredients() {
@@ -25,7 +25,7 @@ export class ShoppingListService {
 
   addIngredients(ingredients: Ingredient[]) {
     this.ingredients.push(...ingredients);
-    this.ingredientsChanged.next(this.ingredients.slice())
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
